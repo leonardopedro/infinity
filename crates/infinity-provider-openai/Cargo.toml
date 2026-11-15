@@ -1,0 +1,29 @@
+[package]
+name = "infinity-provider-openai"
+publish = true
+version = "0.2.0"
+documentation = "https://docs.rs/infinity-provider-openai/"
+description = "OpenAI Chat Completions compatible model provider for Infinity agents and coding agents."
+edition = "2024"
+repository = { workspace = true }
+license = "Apache-2.0"
+
+[dependencies]
+infinity-provider-protocol = { path = "../infinity-provider-protocol", version = "^0.2.0", features = ["remote"] }
+async-trait = { workspace = true }
+async-stream = "0.3"
+clap = { version = "4", features = ["derive", "env"] }
+futures-util = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[dev-dependencies]
+axum = { workspace = true }
+tokio = { workspace = true, features = ["io-util", "macros", "net", "process", "rt-multi-thread"] }
+
+[lints]
+workspace = true

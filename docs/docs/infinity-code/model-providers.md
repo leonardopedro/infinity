@@ -21,6 +21,8 @@ infinity provider install bedrock --crate infinity-provider-bedrock
 - `--crate` is the crate to install; its binary becomes the provider's command.
 - By default the crate is installed from [crates.io](https://crates.io). Pass `--git <url>` or `--path <dir>` to install from a git repository or a local checkout instead. The source is recorded, exactly like `infinity rap install`, so the provider can be updated later.
 
+To run a local or self-hosted model instead, such as Edge0's `edge0-infer serve`, install the OpenAI-compatible provider; see [Local Models](./local-models.md).
+
 ### The Bedrock provider
 
 `infinity-provider-bedrock` serves the Claude models available on AWS Bedrock. It uses your ambient AWS configuration through the standard SDK credential chain (`AWS_PROFILE`, environment variables, SSO, instance profiles), and requires Bedrock model access to be enabled on the account.

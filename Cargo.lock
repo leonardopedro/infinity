@@ -2921,6 +2921,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "infinity-provider-openai"
+version = "0.2.0"
+dependencies = [
+ "async-stream",
+ "async-trait",
+ "axum",
+ "clap",
+ "futures-util",
+ "infinity-provider-protocol",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "infinity-provider-protocol"
 version = "0.2.0"
 dependencies = [
