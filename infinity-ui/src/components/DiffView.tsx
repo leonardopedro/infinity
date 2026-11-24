@@ -57,7 +57,7 @@ export const DiffView = memo(function DiffView({
   theme,
   workerFactory,
 }: DiffViewProps) {
-  const viewerRef = useRef<CodeViewHandle<undefined>>(null);
+  const viewerRef = useRef<CodeViewHandle<undefined, undefined>>(null);
 
   const sorted = useMemo(() => sortFiles(files), [files]);
   const filePaths = useMemo(() => sorted.map((f) => f.path), [sorted]);
@@ -91,7 +91,7 @@ export const DiffView = memo(function DiffView({
     >
   >(new Map());
 
-  const items: CodeViewItem[] = useMemo(() => {
+  const items: CodeViewItem<undefined>[] = useMemo(() => {
     const cache = diffCacheRef.current;
     return sorted.map((f) => {
       const cached = cache.get(f.path);
